@@ -1,23 +1,18 @@
 import React, { Component } from 'react';
+import Todos from './Todos'
 
 class App extends Component {
+  state = {
+    todos: [
+      { id: 1, todo: 'Create React To Do App' },
+      { id: 2, todo: 'Add Redix to the To Do App' },
+      { id: 3, todo: 'Commit and push code to GitHub' }
+    ]
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+
       </div>
     );
   }
