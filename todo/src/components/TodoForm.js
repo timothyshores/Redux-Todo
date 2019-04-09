@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
 import { addTodo } from '../actions';
 
 class TodoForm extends React.Component {
@@ -16,8 +15,9 @@ class TodoForm extends React.Component {
 
     addTodo = e => {
         e.preventDefault();
+        console.log('TodoForm addTodo: ', this);
         this.props.addTodo(this.state.todo);
-        this.setState({ newMember: '' });
+        this.setState({ todo: '' });
     };
 
     render() {
@@ -29,18 +29,19 @@ class TodoForm extends React.Component {
                     placeholder="Add a new todo"
                     onChange={this.handleChanges}
                 />
-                <button onClick={this.addFriend}>Add Todo</button>
+                <button onClick={this.addTodo}>Add Todo</button>
             </>
         );
     }
 }
 
 const mapStateToProps = state => {
+    console.log('todoForm state', state)
     return {
-        members: state.members
+        todo: state.todos
     };
 };
 
 export default connect(
-    mapStateToProps
+    mapStateToProps, { addTodo }
 )(TodoForm);

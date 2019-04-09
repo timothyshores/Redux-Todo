@@ -17,7 +17,7 @@ function reducer(state = initialState, action) {
                 ...state,
                 todos: [
                     ...state.todos,
-                    { name: action.todo, completed: false, id: Date.now() }
+                    { todo: action.payload, completed: false, id: Date.now() }
                 ]
             };
         default:
